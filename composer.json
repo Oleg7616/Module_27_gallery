@@ -1,0 +1,16 @@
+{
+    "name": "project/t",
+    "description": "TinyMVC",
+    
+
+    "autoload": {
+        "psr-4": {
+        "Tutsplus\\Library\\": "src"
+        }
+        },
+
+    "require": {
+        "twig/twig": "3.3",
+        "tomwalder/php-gds": "5.1"
+    }
+}
