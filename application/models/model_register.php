@@ -1,16 +1,32 @@
 <?php
 
+include __DIR__ . '/../config/db_connection.php';
+
 class Model_Register extends Model {
+
+    private $db;
+
+    public function __construct(){
+        
+        $this->db = new Database;
+    }
     
-/*public function register($email, $name, $password)
+public function register($data)
 {
-    //$db = Db::getConnection();
-    $sql = 'INSERT INTO users (email, name, password) VALUES (:email, :name, :password)';
-    // Получение и возврат результатов. Используется подготовленный запрос
-    $result = $db->prepare($sql);
-    $result->bindParam(':email', $email, PDO::PARAM_STR);
-    $result->bindParam(':name', $name, PDO::PARAM_STR);
-    $result->bindParam(':password', $password, PDO::PARAM_STR);
-    return $result->execute();
-}*/
+
+    $this->db->query('INSERT INTO users (email, name, password) VALUES (:email, :name, :password)');
+
+        $this->db->bind(':email', $data['email']);
+        $this->db->bind(':name', $data['name']);
+        $this->db->bind(':password', $data['password']);
+
+        //Execute
+        if($this->db->execute()){
+            return true;
+        }else{
+            return false;
+        }
+    
+}
+
 }

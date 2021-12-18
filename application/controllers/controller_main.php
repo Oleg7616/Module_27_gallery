@@ -1,4 +1,4 @@
-<?php require_once 'config\config.php'; ?>
+<?php require_once 'application\config\config.php'; ?>
 
 <?php
 

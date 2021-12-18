@@ -13,20 +13,19 @@ class Controller_Register extends Controller {
         $this->view->generate('register_view.php', 'template_view.php');
     }
 
-public function register() {
+/*public function register() {
     $email = $_POST['email'];
     $name = $_POST['name'];
     $password = $_POST['password'];
     $password_confirm = $_POST['password_confirm'];
 
 if ($password === $password_confirm) {
-    //con
     // echo ('Connected');
     mysqli_query($connect, "INSERT INTO `users` (`id`, `email`, `name`, `password`) VALUES (NULL, '$email', '$name', '$password')");
-    //header('Location: ../login_view.php');
+    header('Location: ../views/login_view.php');
 } else {
     die ('Пароли не совпадают');
-}
+}*/
 
 
     /*public function action_register() {
@@ -60,5 +59,4 @@ if ($password === $password_confirm) {
     
  }*/
   
-}
 }
