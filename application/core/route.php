@@ -5,10 +5,21 @@ class Route {
 
     public static function start() {
 
+       // var_dump('$_GET: ', $_GET);
+
         $controller_name = 'Main';
         $action_name = 'index';
 
         $routes = $_GET['url'];
+
+        //$routes = trim($_SERVER['REQUEST_URI'], '/');
+        $method = $_SERVER['REQUEST_METHOD'];
+
+        //echo $_SERVER['REQUEST_URI'];
+
+        if ($routes === 'register' && $method === 'POST') {
+            $action_name = 'register';
+        }
 
         if ( !empty($routes) ){
             $controller_name = $routes;
@@ -27,6 +38,12 @@ class Route {
 
         $controller_file = strtolower($controller_name) . '.php';
         $controller_path = 'application/controllers/' .$controller_file;
+
+        //var_dump('$model_name: ', $model_name, '$controller_name: ', $controller_name, '$action_name: ', $action_name);
+       // var_dump('$method: ', $method);
+
+       // var_dump('$_POST: ', $_POST);
+       // var_dump('$_GET: ', $_GET);
         
         if (file_exists($controller_path)) {
              include 'application/controllers/' .$controller_file;

@@ -34,10 +34,10 @@ class Database {
         return $this;
     }
 
-    public function execute($sql) {
+    public function execute($sql, $params) {
 
         $sth = $this->link->prepare($sql);
-        return $sth->execute();
+        return $sth->execute($params);
     }
 
     public function query($sql) {

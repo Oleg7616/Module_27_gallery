@@ -7,26 +7,25 @@ class Model_Register extends Model {
     private $db;
 
     public function __construct(){
-        
+
         $this->db = new Database;
     }
     
-public function register($data)
-{
-
-    $this->db->query('INSERT INTO users (email, name, password) VALUES (:email, :name, :password)');
-
-        $this->db->bind(':email', $data['email']);
-        $this->db->bind(':name', $data['name']);
-        $this->db->bind(':password', $data['password']);
-
-        //Execute
-        if($this->db->execute()){
-            return true;
-        }else{
-            return false;
-        }
+    public function register($data)
+    {
+        $sql = 'INSERT INTO users (email, name, password) VALUES (:email, :name, :password)';
+        // var_dump($sql);
+        $params = array('email' => $data['email'], 'name' => $data['name'], 'password' => $data['password']);
+        $this->db->execute($sql, $params);
+        //header('Location: ../views/registersuccess_view.php');
+        // var_dump('hello');
+        //echo 'hello';
     
-}
+    }
+
+    /*public function success() {
+        $title = 'Вы зарегистрированы.';
+        $this->view->generate('/..views/registersuccess_view.php', 'template_view.php', $title);
+    }*/
 
 }

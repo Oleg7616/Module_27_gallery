@@ -13,6 +13,15 @@ class Controller_Register extends Controller {
         $this->view->generate('register_view.php', 'template_view.php');
     }
 
+    function action_register() {
+        $this->model->register($_POST);
+    }
+
+    function success() {
+        $title = 'Registration Successful';
+        $this->view->generate('views/registersuccess_view.php', 'template_view.php', $title);
+    }
+
 /*public function register() {
     $email = $_POST['email'];
     $name = $_POST['name'];
