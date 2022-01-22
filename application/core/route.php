@@ -21,6 +21,10 @@ class Route {
             $action_name = 'register';
         }
 
+        if ($routes === 'login' && $method === 'POST') {
+            $action_name = 'login';
+        }
+
         if ( !empty($routes) ){
             $controller_name = $routes;
         }

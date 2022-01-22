@@ -16,7 +16,7 @@
 <div class="container">
      <!-- Форма авторизации -->
 
-<form action="" method="POST" enctype="multipart/form-data" >
+<form action="login" method="POST" enctype="multipart/form-data" >
     <label>Имя</label>
     <input type="text" name="name" placeholder="Введите свое имя">
     <label>Пароль</label>

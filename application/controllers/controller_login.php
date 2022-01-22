@@ -12,4 +12,13 @@ class Controller_Login extends Controller {
         $this->view->generate('login_view.php', 'template_view.php');
     }
 
+    function action_login() {
+        $this->model->login($_POST);
+        $this->action_success();
+    }
+
+    function action_success() {
+        $this->view->generate('main_view.php', 'template_view.php');
+    }
+
 }
