@@ -22,6 +22,7 @@ class Controller_Register extends Controller {
         $this->view->generate('register_success_view.php', 'template_view.php');
     }
 
+
 /*public function register() {
     $email = $_POST['email'];
     $name = $_POST['name'];

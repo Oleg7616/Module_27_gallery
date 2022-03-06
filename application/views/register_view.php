@@ -32,5 +32,17 @@
    
 </form>
 </div>
+
+<!--<div style="color: red; font-size: 14px; padding: 20px; margin: 0 auto; display: block; width:400px;">-->
+<?php if (!empty($errors)) : ?>
+    <div class="alert alert-danger">
+        <ul>
+            <?php foreach ($errors as $err) : ?>
+                <li><?php echo $err; ?></li>
+            <?php endforeach; ?>
+        </ul>
+    </div>
+<?php endif; ?>
+    
 </body>
 </html>
